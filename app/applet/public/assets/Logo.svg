@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 48" fill="none" width="280" height="48">
+  <style>
+    .brand-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      fill: #3B2C25;
+    }
+    .brand-sub {
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 8.5px;
+      font-weight: 800;
+      letter-spacing: 0.26em;
+      fill: #1A4B35;
+      text-transform: uppercase;
+    }
+  </style>
+  <text x="0" y="26" class="brand-title">THE PALATE PANTRY</text>
+  <text x="1" y="41" class="brand-sub">HOLIDAY KITCHEN</text>
+</svg>

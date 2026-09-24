@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Bricolage Grotesque", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --color-ivory: #f8f6f0;
+  --color-cocoa: #3a271d;
+  --color-cream: #fbf9f4;
+  --color-forest: #1f4532;
+  --color-olive: #5C6D36;
+  --color-olive-dark: #49572b;
+  --color-olive-light: #6e8341;
+  --color-berry: #8e1f29;
+  --color-gold: #dba347;
+  --color-soft-line: #e7dfd3;
+  --color-primary-foreground: #fbf9f4;
+  --color-destructive-foreground: #fbf9f4;
+  --color-accent-foreground: #3a271d;
+}
+
+:root {
+  --background: #5C6D36;
+  --foreground: #fbf9f4;
+  --card: #fbf9f4;
+  --card-foreground: #3a271d;
+  --primary: #1f4532;
+  --primary-foreground: #fbf9f4;
+  --destructive: #8e1f29;
+  --destructive-foreground: #fbf9f4;
+  --accent: #dba347;
+  --accent-foreground: #3a271d;
+  --border: #4a572c;
+}
+
+@keyframes feast-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.feast-reveal {
+  animation: 0.7s cubic-bezier(0.22, 1, 0.36, 1) both feast-rise;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+

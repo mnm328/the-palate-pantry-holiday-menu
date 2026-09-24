@@ -1,0 +1,6 @@
+{
+  "name": "The Palate Pantry · Christmas Menu 2026–2027",
+  "description": "Curated holiday feast packages for 10-12 pax and artisanal à la carte catering trays for Christmas celebrations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

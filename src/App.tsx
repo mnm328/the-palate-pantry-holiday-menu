@@ -1,0 +1,56 @@
+import React, { useState } from 'react';
+import { Header } from './components/Header';
+import { Hero } from './components/Hero';
+import { CuratedFeasts } from './components/CuratedFeasts';
+import { AlacarteSection } from './components/AlacarteSection';
+import { OrderNotesSection } from './components/OrderNotesSection';
+import { Footer } from './components/Footer';
+import { OrderModal } from './components/OrderModal';
+
+export default function App() {
+  const [isOrderModalOpen, setIsOrderModalOpen] = useState<boolean>(false);
+  const [selectedFeastForOrder, setSelectedFeastForOrder] = useState<string>('');
+
+  const handleOpenOrder = (feastName?: string) => {
+    if (feastName) {
+      setSelectedFeastForOrder(feastName);
+    }
+    setIsOrderModalOpen(true);
+  };
+
+  const handleCloseOrder = () => {
+    setIsOrderModalOpen(false);
+  };
+
+  return (
+    <div className="min-h-screen bg-[#5C6D36] font-body text-primary-foreground antialiased selection:bg-gold/30 selection:text-primary-foreground">
+      {/* Top Header */}
+      <Header onOpenOrder={() => handleOpenOrder()} />
+
+      {/* Main Content Area */}
+      <main id="top">
+        {/* Hero Section & Large Feast Banner */}
+        <Hero onOpenOrder={() => handleOpenOrder()} />
+
+        {/* Curated Christmas Feasts Section */}
+        <CuratedFeasts onSelectFeast={(name) => handleOpenOrder(name)} />
+
+        {/* Holiday À La Carte Menu Section */}
+        <AlacarteSection onAddItem={(name) => handleOpenOrder(name)} />
+
+        {/* Packaging & Ordering Notes Section */}
+        <OrderNotesSection onOpenOrder={() => handleOpenOrder()} />
+      </main>
+
+      {/* Page Footer */}
+      <Footer />
+
+      {/* Interactive Reservation / Order Modal */}
+      <OrderModal
+        isOpen={isOrderModalOpen}
+        onClose={handleCloseOrder}
+        initialFeast={selectedFeastForOrder}
+      />
+    </div>
+  );
+}
