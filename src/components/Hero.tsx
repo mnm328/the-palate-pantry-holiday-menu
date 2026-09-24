@@ -8,10 +8,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenOrder }) => {
   return (
     <div className="bg-[#F8F3E6] text-[#3B2C25]">
       <section className="mx-auto max-w-7xl px-5 pb-9 pt-12 sm:pt-16 lg:px-8">
-        {/* Christmas & New Year Badge */}
+        {/* Holiday Menu Badge */}
         <div className="feast-reveal mb-7 flex flex-wrap items-center gap-3">
           <span className="rounded-full bg-[#1A4B35] px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#F8F3E6] shadow-sm">
-            Christmas &amp; New Year Menu
+            Holiday Menu
           </span>
           <span className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#3B2C25]/75 font-semibold">
             Dec 15, 2026 — Jan 6, 2027
