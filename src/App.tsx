@@ -10,10 +10,30 @@ import { OrderModal } from './components/OrderModal';
 export default function App() {
   const [isOrderModalOpen, setIsOrderModalOpen] = useState<boolean>(false);
   const [selectedFeastForOrder, setSelectedFeastForOrder] = useState<string>('');
+  const [selectedAlacarteForOrder, setSelectedAlacarteForOrder] = useState<string>('');
+  const [orderModalMode, setOrderModalMode] = useState<'curated' | 'custom'>('curated');
 
-  const handleOpenOrder = (feastName?: string) => {
-    if (feastName) {
-      setSelectedFeastForOrder(feastName);
+  const handleOpenOrder = (options?: {
+    feastName?: string;
+    alacarteItem?: string;
+    mode?: 'curated' | 'custom';
+  }) => {
+    if (options?.alacarteItem) {
+      setSelectedAlacarteForOrder(options.alacarteItem);
+      setSelectedFeastForOrder('');
+      setOrderModalMode('custom');
+    } else if (options?.mode === 'custom') {
+      setSelectedAlacarteForOrder('');
+      setSelectedFeastForOrder('');
+      setOrderModalMode('custom');
+    } else if (options?.feastName) {
+      setSelectedFeastForOrder(options.feastName);
+      setSelectedAlacarteForOrder('');
+      setOrderModalMode('curated');
+    } else {
+      setSelectedFeastForOrder('');
+      setSelectedAlacarteForOrder('');
+      setOrderModalMode('curated');
     }
     setIsOrderModalOpen(true);
   };
@@ -33,10 +53,21 @@ export default function App() {
         <Hero onOpenOrder={() => handleOpenOrder()} />
 
         {/* Curated Christmas Feasts Section */}
-        <CuratedFeasts onSelectFeast={(name) => handleOpenOrder(name)} />
+        <CuratedFeasts
+          onSelectFeast={(name) =>
+            handleOpenOrder({ feastName: name, mode: 'curated' })
+          }
+        />
 
         {/* Holiday À La Carte Menu Section */}
-        <AlacarteSection onAddItem={(name) => handleOpenOrder(name)} />
+        <AlacarteSection
+          onAddItem={(name) =>
+            handleOpenOrder({
+              alacarteItem: name || undefined,
+              mode: 'custom',
+            })
+          }
+        />
 
         {/* Packaging & Ordering Notes Section */}
         <OrderNotesSection onOpenOrder={() => handleOpenOrder()} />
@@ -50,6 +81,8 @@ export default function App() {
         isOpen={isOrderModalOpen}
         onClose={handleCloseOrder}
         initialFeast={selectedFeastForOrder}
+        initialAlacarteItem={selectedAlacarteForOrder}
+        initialMode={orderModalMode}
       />
     </div>
   );
