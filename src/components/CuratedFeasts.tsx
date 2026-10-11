@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { curatedFeasts, FeastCategory, FeastItem } from '../data/menuData';
+import { curatedFeasts, FeastCategory, FeastItem, getProductUrl } from '../data/menuData';
 
 interface CuratedFeastsProps {
-  onSelectFeast: (feastName: string) => void;
+  onSelectFeast?: (feastName: string) => void;
 }
 
 function parsePrice(priceStr: string): number {
@@ -18,7 +18,7 @@ function sortMidHighLow(feasts: FeastItem[]): FeastItem[] {
   return [sorted[1], sorted[2], sorted[0]];
 }
 
-export const CuratedFeasts: React.FC<CuratedFeastsProps> = ({ onSelectFeast }) => {
+export const CuratedFeasts: React.FC<CuratedFeastsProps> = () => {
   const [activeSpread, setActiveSpread] = useState<FeastItem | null>(null);
 
   return (
@@ -184,14 +184,14 @@ export const CuratedFeasts: React.FC<CuratedFeastsProps> = ({ onSelectFeast }) =
                             View Spread
                           </button>
 
-                          {/* Reserve This Feast Button */}
-                          <button
-                            type="button"
-                            onClick={() => onSelectFeast(feast.name)}
-                            className={`w-full cursor-pointer rounded-full py-3.5 text-xs font-black uppercase tracking-[0.14em] transition-all duration-150 ${primaryBtnClass}`}
+                          {/* Reserve / Order This Feast Button */}
+                          <a
+                            href={getProductUrl(feast.name)}
+                            target="_self"
+                            className={`flex w-full items-center justify-center rounded-full py-3.5 text-xs font-black uppercase tracking-[0.14em] transition-all duration-150 ${primaryBtnClass}`}
                           >
-                            RESERVE THIS FEAST
-                          </button>
+                            ORDER THIS FEAST
+                          </a>
                         </div>
                       </article>
                     );
@@ -254,17 +254,13 @@ export const CuratedFeasts: React.FC<CuratedFeastsProps> = ({ onSelectFeast }) =
                     · Serves 10–12 Guests
                   </span>
                 </div>
-                <button
-                  type="button"
-                  onClick={() => {
-                    const name = activeSpread.name;
-                    setActiveSpread(null);
-                    onSelectFeast(name);
-                  }}
-                  className="cursor-pointer rounded-full border-2 border-[#0d271a] bg-[#1A4B35] px-7 py-3 text-xs font-black uppercase tracking-[0.14em] text-[#F8F3E6] shadow-[3px_3px_0px_#0d271a] transition-all hover:bg-[#153f2c] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+                <a
+                  href={getProductUrl(activeSpread.name)}
+                  target="_self"
+                  className="inline-block cursor-pointer rounded-full border-2 border-[#0d271a] bg-[#1A4B35] px-7 py-3 text-xs font-black uppercase tracking-[0.14em] text-[#F8F3E6] shadow-[3px_3px_0px_#0d271a] transition-all hover:bg-[#153f2c] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
                 >
-                  RESERVE THIS FEAST
-                </button>
+                  ORDER THIS FEAST
+                </a>
               </div>
 
               <div>

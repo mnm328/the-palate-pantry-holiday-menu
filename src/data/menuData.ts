@@ -314,3 +314,99 @@ export const dishImages: Record<string, string> = {
   "Pork Dinuguan with Puto": "/assets/dishes/pork-dinuguan.webp",
   "Sinuglaw · Sugba + Kilaw": "/assets/dishes/pork-sinuglaw-1.png"
 };
+
+export const PRODUCT_URLS: Record<string, string> = {
+  // Salads & Savory Bites
+  "Taconitos": "https://thepalatepantry.com/store-product-detail/product/taconitos",
+  "Shanghai Rolls": "https://thepalatepantry.com/store-product-detail/product/shanghai-rolls",
+  "Baked Sushi - Kani & Tuna": "https://thepalatepantry.com/store-product-detail/product/baked-sushi-kani-and-tuna",
+  "Baked Sushi · Kani & Tuna": "https://thepalatepantry.com/store-product-detail/product/baked-sushi-kani-and-tuna",
+  "Korean Cucumber Salad": "https://thepalatepantry.com/store-product-detail/product/korean-cucumber-salad",
+  "Nacho Salad": "https://thepalatepantry.com/store-product-detail/product/nacho-salad",
+
+  // Pasta & Noodles
+  "Alfredonara": "https://thepalatepantry.com/store-product-detail/product/alfredonara",
+  "Baked Spaghetti with Meatballs": "https://thepalatepantry.com/store-product-detail/product/baked-spaghetti-with-meatballs",
+  "Creamy Truffle Bacon Pasta": "https://thepalatepantry.com/store-product-detail/product/creamy-truffle-bacon-pasta",
+  "Bold Chicken Fajita Pasta": "https://thepalatepantry.com/store-product-detail/product/bold-chicken-fajita-pasta",
+  "Classic Mom's Lasagna": "https://thepalatepantry.com/store-product-detail/product/classic-mom-s-lasagna",
+  "Classic Mom’s Lasagna": "https://thepalatepantry.com/store-product-detail/product/classic-mom-s-lasagna",
+  "Ultimate Baked Macaroni": "https://thepalatepantry.com/store-product-detail/product/ultimate-baked-macaroni",
+  "Savory Charlie Chan": "https://thepalatepantry.com/store-product-detail/product/savory-charlie-chan",
+  "Korean Japchae": "https://thepalatepantry.com/store-product-detail/product/korean-japchae",
+  "Golden Garlic Sotanghon": "https://thepalatepantry.com/store-product-detail/product/golden-garlic-sotanghon",
+
+  // Beef
+  "Salisbury Steak": "https://thepalatepantry.com/store-product-detail/product/holiday-salisbury-steak",
+  "Classic Kare-Kare with Binagoongan": "https://thepalatepantry.com/store-product-detail/product/holiday-classic-kare-kare-with-binagoongan",
+  "Beef with Mushroom": "https://thepalatepantry.com/store-product-detail/product/holiday-beef-with-mushroom",
+  "Beef & Pork Mechado": "https://thepalatepantry.com/store-product-detail/product/holiday-beef-pork-mechado",
+  "Braised Beef": "https://thepalatepantry.com/store-product-detail/product/holiday-braised-beef",
+
+  // Chicken
+  "Chicken Cordon Bleu": "https://thepalatepantry.com/store-product-detail/product/chicken-cordon-bleu",
+  "Homestyle Fried Chicken with Gravy": "https://thepalatepantry.com/store-product-detail/product/homestyle-fried-chicken-with-gravy",
+  "Flavored Chicken Wings": "https://thepalatepantry.com/store-product-detail/product/flavored-chicken-wings",
+  "Chicken Alexander": "https://thepalatepantry.com/store-product-detail/product/chicken-alexander",
+  "Hainanese Chicken": "https://thepalatepantry.com/store-product-detail/product/hainanese-chicken",
+
+  // Pork
+  "Classic Pork Sisig": "https://thepalatepantry.com/store-product-detail/product/classic-pork-sisig",
+  "Chinese-Style Braised Pork Belly": "https://thepalatepantry.com/store-product-detail/product/chinese-style-braised-pork-belly",
+  "Not-Your-Ordinary Pork BBQ": "https://thepalatepantry.com/store-product-detail/product/not-your-ordinary-pork-bbq",
+  "Pork Dinuguan with Puto": "https://thepalatepantry.com/store-product-detail/product/pork-dinuguan-with-puto",
+
+  // Fish & Seafood
+  "Sinuglaw - Sugba + Kilaw": "https://thepalatepantry.com/store-product-detail/product/holiday-sinuglaw-sugba-kilaw",
+  "Sinuglaw · Sugba + Kilaw": "https://thepalatepantry.com/store-product-detail/product/holiday-sinuglaw-sugba-kilaw",
+  "Lemon Fish Fillet with Aioli": "https://thepalatepantry.com/store-product-detail/product/holiday-lemon-fish-fillet-with-aioli",
+  "Cheesy Baked Bangus": "https://thepalatepantry.com/store-product-detail/product/holiday-cheesy-baked-bangus",
+  "Shrimp Salvatorre": "https://thepalatepantry.com/store-product-detail/product/holiday-shrimp-salvatorre",
+  "Buttered Garlic Shrimp": "https://thepalatepantry.com/store-product-detail/product/holiday-buttered-garlic-shrimp",
+  "Cajun Seafood Boil": "https://thepalatepantry.com/store-product-detail/product/holiday-cajun-seafood-boil",
+
+  // Something Sweet
+  "Banana Loaf Cake": "https://thepalatepantry.com/store-product-detail/product/banana-loaf-cake",
+  "Zesty Lemon Loaf": "https://thepalatepantry.com/store-product-detail/product/zesty-lemon-loaf",
+
+  // Curated Feasts
+  "Classic Christmas Comfort": "https://thepalatepantry.com/store-product-detail/product/christmas-table-a-classic-christmas-comfort",
+  "Holiday Party Favorites": "https://thepalatepantry.com/store-product-detail/product/christmas-table-b-holiday-party-favorites",
+  "Asian Holiday Table": "https://thepalatepantry.com/store-product-detail/product/christmas-table-c-asian-holiday-table",
+  "Western Holiday Comfort": "https://thepalatepantry.com/store-product-detail/product/holiday-feast-a-western-holiday-comfort",
+  "Chinese-Style Holiday Feast": "https://thepalatepantry.com/store-product-detail/product/holiday-feast-b-chinese-style-holiday-feast",
+  "Coastal Holiday Feast": "https://thepalatepantry.com/store-product-detail/product/holiday-feast-c-coastal-holiday-feast",
+  "Filipino Christmas": "https://thepalatepantry.com/store-product-detail/product/christmas-salu-salo-a-filipino-christmas",
+  "Holiday Indulgence": "https://thepalatepantry.com/store-product-detail/product/christmas-salu-salo-b-holiday-indulgence",
+  "Korean Holiday Feast": "https://thepalatepantry.com/store-product-detail/product/christmas-salu-salo-c-korean-holiday-feast",
+  "The Palate Pantry Signature": "https://thepalatepantry.com/store-product-detail/product/grand-christmas-feast-a-the-palate-pantry-signature",
+  "Grand Seafood Christmas": "https://thepalatepantry.com/store-product-detail/product/grand-christmas-feast-b-grand-seafood-christmas",
+  "Ultimate Holiday Table": "https://thepalatepantry.com/store-product-detail/product/grand-christmas-feast-c-ultimate-holiday-table"
+};
+
+/**
+ * Returns the matching GHL product page URL for any product or feast name.
+ * Normalizes punctuation and apostrophes so variations always match reliably.
+ */
+export function getProductUrl(name: string): string {
+  if (PRODUCT_URLS[name]) {
+    return PRODUCT_URLS[name];
+  }
+  const clean = (str: string) =>
+    str
+      .replace(/[\u2018\u2019']/g, "'")
+      .replace(/[·–—]/g, '-')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .toLowerCase();
+
+  const target = clean(name);
+  for (const [key, url] of Object.entries(PRODUCT_URLS)) {
+    if (clean(key) === target) {
+      return url;
+    }
+  }
+
+  // Fallback to store root if unknown
+  return "https://thepalatepantry.com";
+}

@@ -1,12 +1,12 @@
 import React from 'react';
-import { Plus, UtensilsCrossed, Sparkles } from 'lucide-react';
-import { alacarteCategories, AlacarteCategory, AlacarteItem } from '../data/menuData';
+import { UtensilsCrossed, Sparkles, ExternalLink } from 'lucide-react';
+import { alacarteCategories, AlacarteCategory, AlacarteItem, getProductUrl } from '../data/menuData';
 
 interface AlacarteSectionProps {
   onAddItem?: (itemName: string) => void;
 }
 
-export const AlacarteSection: React.FC<AlacarteSectionProps> = ({ onAddItem }) => {
+export const AlacarteSection: React.FC<AlacarteSectionProps> = () => {
   return (
     <section id="alacarte" className="scroll-mt-6 mx-auto max-w-7xl px-5 py-16 lg:px-8">
       {/* Section Header */}
@@ -24,17 +24,14 @@ export const AlacarteSection: React.FC<AlacarteSectionProps> = ({ onAddItem }) =
           </p>
         </div>
 
-        {/* Create Your Own Menu CTA Button */}
-        {onAddItem && (
-          <button
-            type="button"
-            onClick={() => onAddItem('')}
-            className="cursor-pointer inline-flex items-center gap-2 rounded-full border-2 border-gold bg-gold px-6 py-3.5 text-xs font-black uppercase tracking-[0.14em] text-cocoa shadow-[3px_3px_0px_#3B2C25] hover:bg-[#ebd27a] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all duration-150"
-          >
-            <UtensilsCrossed className="size-4" />
-            <span>Create Your Own Menu</span>
-          </button>
-        )}
+        {/* View Curated Feasts Anchor */}
+        <a
+          href="#feasts"
+          className="cursor-pointer inline-flex items-center gap-2 rounded-full border-2 border-gold bg-gold px-6 py-3.5 text-xs font-black uppercase tracking-[0.14em] text-cocoa shadow-[3px_3px_0px_#3B2C25] hover:bg-[#ebd27a] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all duration-150"
+        >
+          <UtensilsCrossed className="size-4" />
+          <span>View Set Feasts</span>
+        </a>
       </div>
 
       {/* Grid of Dish Categories */}
@@ -72,23 +69,20 @@ export const AlacarteSection: React.FC<AlacarteSectionProps> = ({ onAddItem }) =
                     )}
                   </div>
 
-                  {/* Pricing and Add to Order Action */}
+                  {/* Pricing and Direct GHL Product Page Order Link */}
                   <div className="shrink-0 text-right pt-0.5 flex flex-col sm:flex-row items-end sm:items-center gap-2">
                     <span className="text-xs sm:text-sm font-semibold tabular-nums text-forest">
                       {item.price}
                     </span>
 
-                    {onAddItem && (
-                      <button
-                        type="button"
-                        onClick={() => onAddItem(item.name)}
-                        className="cursor-pointer inline-flex items-center gap-1 rounded-full bg-forest/10 hover:bg-forest text-forest hover:text-white px-2.5 py-1 text-[11px] font-extrabold tracking-wider uppercase transition-colors"
-                        title={`Add ${item.name} to order`}
-                      >
-                        <Plus className="size-3" />
-                        <span>Add</span>
-                      </button>
-                    )}
+                    <a
+                      href={getProductUrl(item.name)}
+                      target="_self"
+                      className="cursor-pointer inline-flex items-center gap-1 rounded-full bg-forest/10 hover:bg-[#1A4B35] text-[#1A4B35] hover:text-white px-3 py-1 text-[11px] font-extrabold tracking-wider uppercase transition-colors border border-[#1A4B35]/20 hover:border-[#1A4B35]"
+                      title={`Order ${item.name}`}
+                    >
+                      <span>Order</span>
+                    </a>
                   </div>
                 </li>
               ))}
@@ -103,32 +97,29 @@ export const AlacarteSection: React.FC<AlacarteSectionProps> = ({ onAddItem }) =
         ))}
       </div>
 
-      {/* Bottom Custom Menu Banner */}
-      {onAddItem && (
-        <div className="mt-12 rounded-3xl border-2 border-gold/40 bg-cream/95 p-6 sm:p-8 text-cocoa shadow-lg flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div className="flex items-start gap-4">
-            <div className="rounded-2xl bg-forest p-3 text-gold shrink-0">
-              <Sparkles className="size-6" />
-            </div>
-            <div>
-              <h3 className="font-display text-xl sm:text-2xl font-black text-forest">
-                Custom Menu Selection
-              </h3>
-              <p className="mt-1 text-xs sm:text-sm text-cocoa/80 max-w-xl">
-                Curate your table your way! Select individual à la carte trays and assemble your exact holiday feast in our interactive order form.
-              </p>
-            </div>
+      {/* Bottom Direct Ordering Information Banner */}
+      <div className="mt-12 rounded-3xl border-2 border-gold/40 bg-cream/95 p-6 sm:p-8 text-cocoa shadow-lg flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="flex items-start gap-4">
+          <div className="rounded-2xl bg-forest p-3 text-gold shrink-0">
+            <Sparkles className="size-6" />
           </div>
-
-          <button
-            type="button"
-            onClick={() => onAddItem('')}
-            className="cursor-pointer shrink-0 rounded-full bg-forest px-7 py-3.5 text-xs font-black uppercase tracking-[0.14em] text-white shadow-[3px_3px_0px_#0d271a] hover:bg-[#143e2b] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all duration-150"
-          >
-            Build Your Menu Now
-          </button>
+          <div>
+            <h3 className="font-display text-xl sm:text-2xl font-black text-forest">
+              Direct Online Ordering
+            </h3>
+            <p className="mt-1 text-xs sm:text-sm text-cocoa/80 max-w-xl">
+              Each tray and set menu links directly to its product page on our store. Click <b>Order</b> on any dish above to view its details, add it to your cart, and check out securely.
+            </p>
+          </div>
         </div>
-      )}
+
+        <a
+          href="#feasts"
+          className="cursor-pointer shrink-0 rounded-full bg-forest px-7 py-3.5 text-xs font-black uppercase tracking-[0.14em] text-white shadow-[3px_3px_0px_#0d271a] hover:bg-[#143e2b] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all duration-150"
+        >
+          Explore Set Feasts
+        </a>
+      </div>
     </section>
   );
 };

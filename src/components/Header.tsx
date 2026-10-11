@@ -1,10 +1,10 @@
 import React from 'react';
 
 interface HeaderProps {
-  onOpenOrder: (selectedItem?: string) => void;
+  onOpenOrder?: (selectedItem?: string) => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ onOpenOrder }) => {
+export const Header: React.FC<HeaderProps> = () => {
   return (
     <header className="sticky top-0 z-40 border-b border-[#3B2C25]/10 bg-[#F8F3E6] shadow-xs">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-2 sm:py-2.5 lg:px-8">
@@ -60,13 +60,12 @@ export const Header: React.FC<HeaderProps> = ({ onOpenOrder }) => {
 
         {/* Zone 3: Direct Order CTA */}
         <div className="flex items-center gap-3">
-          <button
-            type="button"
-            onClick={() => onOpenOrder()}
+          <a
+            href="#feasts"
             className="cursor-pointer rounded-full bg-berry px-5 py-2.5 text-xs font-black uppercase tracking-[0.14em] text-[#F8F3E6] shadow-sm shadow-berry/30 transition-transform hover:-translate-y-0.5 active:translate-y-0 hover:bg-[#781922]"
           >
             Order now
-          </button>
+          </a>
         </div>
       </div>
     </header>

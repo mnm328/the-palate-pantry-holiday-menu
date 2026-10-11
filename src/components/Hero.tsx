@@ -1,10 +1,10 @@
 import React from 'react';
 
 interface HeroProps {
-  onOpenOrder: (selectedItem?: string) => void;
+  onOpenOrder?: (selectedItem?: string) => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onOpenOrder }) => {
+export const Hero: React.FC<HeroProps> = () => {
   return (
     <div className="bg-[#F8F3E6] text-[#3B2C25]">
       <section className="mx-auto max-w-7xl px-5 pb-9 pt-12 sm:pt-16 lg:px-8">

@@ -1,10 +1,10 @@
 import React from 'react';
 
 interface OrderNotesSectionProps {
-  onOpenOrder: () => void;
+  onOpenOrder?: () => void;
 }
 
-export const OrderNotesSection: React.FC<OrderNotesSectionProps> = ({ onOpenOrder }) => {
+export const OrderNotesSection: React.FC<OrderNotesSectionProps> = () => {
   return (
     <section id="order" className="scroll-mt-6 bg-[#F8F3E6] text-[#3B2C25]">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-20 lg:grid-cols-5 lg:px-8">
@@ -83,13 +83,12 @@ export const OrderNotesSection: React.FC<OrderNotesSectionProps> = ({ onOpenOrde
             </ol>
           </div>
 
-          <button
-            type="button"
-            onClick={onOpenOrder}
-            className="mt-8 w-full cursor-pointer rounded-full bg-gold px-6 py-4 text-center text-sm font-black uppercase tracking-[0.14em] text-cocoa border-2 border-[#5c1616] shadow-[3px_3px_0px_#5c1616] hover:bg-[#ebd27a] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all duration-150"
+          <a
+            href="#feasts"
+            className="mt-8 block w-full cursor-pointer rounded-full bg-gold px-6 py-4 text-center text-sm font-black uppercase tracking-[0.14em] text-cocoa border-2 border-[#5c1616] shadow-[3px_3px_0px_#5c1616] hover:bg-[#ebd27a] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all duration-150"
           >
             Start Your Order
-          </button>
+          </a>
         </aside>
       </div>
     </section>
